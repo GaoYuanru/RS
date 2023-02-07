@@ -1,0 +1,21 @@
+# Preface {.unnumbered}
+
+This is a Quarto book.
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+```{r}
+1 + 1
+2 + 4
+```
+load data
+```{r loaddata}
+library(sf)
+library(terra)
+library(raster)
+bare_earth <- st_read("prac_1/Data/Bare_earth_Polygon.shp")
+grass <- st_read("prac_1/Data/Grass_Polygon.shp")
+forest <- st_read("prac_1/Data/Forest_Polygon.shp")
+urban <- st_read("prac_1/Data/Low_urban_Polygon.shp")
+high_urban <- st_read("prac_1/Data/High_urban_Polygon.shp")
+```
