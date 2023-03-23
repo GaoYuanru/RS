@@ -1,20 +1,14 @@
-# Preface {.unnumbered}
+# Introduction {.unnumbered}
 
-This is a Quarto book.
+**HI, EVERYONE! HOPE YOU ALL HAVE A WONDERFUL DAY!**
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-2 + 4
-3 + 4
-```
-
-load data
-
-```{r loaddata}
+```{r, echo = FALSE,warning=FALSE,message=FALSE}
 library(sf)
 library(terra)
 library(raster)
-
+library(sp)
 ```
+
+## About Yuanru Gao
+
+{{< video https://youtu.be/K4HA1PC55SM >}} My name is Yuanru Gao. I obtained a bachelor’s degree in Geographic Information Science in China in 2022. My areas of interest are WebGIS and indoor navigation. During my undergraduate studies, I was awarded a professional patented software copyright for Jinan Wisdom Spring System for Tourism V1.0. I am now studying Urban Spatial Science at University College London to pursue my dream as a spatial science researcher. As you see above, I am also a dancer and actress. In my spare time, I would like to go to take a dance video as long as I have new inspiration.
