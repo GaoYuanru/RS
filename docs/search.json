@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "rsbook",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2\n\n2 + 4\n\n[1] 6\n\n3 + 4\n\n[1] 7\n\n\nload data\n\nlibrary(sf)\n\nLinking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE\n\nlibrary(terra)\n\nterra 1.7.3\n\nlibrary(raster)\n\nLoading required package: sp"
+    "text": "Introduction\nHI, EVERYONE! HOPE YOU ALL HAVE A WONDERFUL DAY!"
   },
   {
     "objectID": "intro.html",
@@ -16,7 +16,7 @@
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "3  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
   },
@@ -30,8 +30,78 @@
   {
     "objectID": "Chapter1.html",
     "href": "Chapter1.html",
-    "title": "rsbook",
+    "title": "1  GYR",
     "section": "",
-    "text": "GYR"
+    "text": "[Caption for the picture. ]{width=“3000”}(image/R.jpeg){width=“50%”}"
+  },
+  {
+    "objectID": "Chapter1.html#summary",
+    "href": "Chapter1.html#summary",
+    "title": "1  Chapter 1",
+    "section": "1.1 Summary",
+    "text": "1.1 Summary\nIn the first week I learned about some common remote sensing data and applications from the course, as well as gained an initial understanding of remote sensing. I also learnt about basic concepts related to remote sensing such as sensors and electric waves. One of the things I felt most strongly about was the process of how remote sensing works. Active and passive remote sensing\nConsidered how electromagnetic waves interact with\nEarth’s surface Atmosphere Explored the 4 resolutions of remotely sensed data\nSpectral Spatial Temporal Radiometric Identified how constraints (environmental or sensor) can dictate the choice of data we use.\n\n1.1.1 The two types of sensor\n\n\n\n\n\n\nActive sensor\n\n\n\n\n\n\n\nPassive sensor\n\n\n\n\n\nData source:source:NASA Science\n\n1.1.1.1 Active remote sensing content and example\nActive sensors have their own source of light or illumination. In particular, it actively sends a pulse and measures the backscatter reflected to the sensor.Active remote sensing comes in many forms. For example, they can be satellites orbiting the Earth, helicopters in the air, or anything on the ground too. Just as long as it has an active sensor.For the untrained eye, it’s just a bunch of black and white pixels. But the reality is that there’s more than meets the eye. For example, the 3 main types of backscatter are:\n\nSpecular reflection:Specular reflection is where dark spots are in the image. In this case, it’s the smooth surfaces like the east-west flowing river and paved surfaces.\nDouble-bounce:Specular reflection is where dark spots are in the image. In this case, it’s the smooth surfaces like the east-west flowing river and paved surfaces.\nDiffuse scattering:Finally, the majority of the radar image is rough surface and diffuse scattering. This may be from the growing vegetation in the agricultural areas. Passive remote sensing example\n\n\n\n\nsynthetic aperture radar image\n\n\n\n1.1.1.2 Passive remote sensing content and example\nPassive sensors use naturally emitted light from the sun. Without the sun, there wouldn’t be passive remote sensing. Really, passive remote sensing can be very similar to how our eyes interpret the world. For example, here are the Rocky Mountains in true color.But the power of passive remote sensing is to see light in the whole electromagnetic spectrum. For example, this multispectral image can have different band combinations like color infrared.\n\n\n\n\nRocky Mountains in true color image\n\n\n\nSource:GISGeography\n\n\n\n\n1.1.2 Four Remotely Sensing Resolutions\n\n\n\n\nflowchart LR\n  A[Four Remotely Sensing Resolutions] --> B(Spectral)\n  A[Four Remotely Sensing Resolutions] --> C(Spatial)\n  A[Four Remotely Sensing Resolutions] --> D(Temporal)\n  A[Four Remotely Sensing Resolutions] --> E(Radiometric)\n  B --> F(Spectral resolution refers to the specific wavelength intervals in the Electromagnetic spectrum that a sensor can record.)\n  C --> G(Spatial resolution is a measure of the smallest object that can be resolved by the sensor, or the area on the ground represented by each pixel.)\n  D --> H(Temporal resolution refers to how often a sensor obtains imagery of a particular area.)\n  E --> I(Radiometric resolution refers to the dynamic range, or number of possible data file values in each band. )\n\n\n\n\n\n\n\n\n\n\n\n\n\nsource:NASA Science\n\n\n\n\n\n\n\n\n\n\nG\n\n  \n\nrun\n\n run   \n\nintr\n\n intr   \n\nrun–intr\n\n   \n\nkernel\n\n kernel   \n\nrun–kernel\n\n   \n\nrunbl\n\n runbl   \n\nintr–runbl\n\n   \n\nrunbl–run\n\n   \n\nzombie\n\n zombie   \n\nkernel–zombie\n\n   \n\nsleep\n\n sleep   \n\nkernel–sleep\n\n   \n\nrunmem\n\n runmem   \n\nkernel–runmem\n\n   \n\nsleep–runmem\n\n   \n\nswap\n\n swap   \n\nsleep–swap\n\n   \n\nrunswap\n\n runswap   \n\nswap–runswap\n\n   \n\nrunswap–runmem\n\n   \n\nnew\n\n new   \n\nrunswap–new\n\n   \n\nnew–runmem"
+  },
+  {
+    "objectID": "Chapter1.html#reflection",
+    "href": "Chapter1.html#reflection",
+    "title": "1  Chapter 1",
+    "section": "1.3 Reflection",
+    "text": "1.3 Reflection\nWhy does the moon have a black sky? Why is the ocean (usually) blue?"
+  },
+  {
+    "objectID": "Chapter1.html#applications",
+    "href": "Chapter1.html#applications",
+    "title": "1  Chapter 1",
+    "section": "1.2 Applications",
+    "text": "1.2 Applications"
+  },
+  {
+    "objectID": "Chapter6.html#summary",
+    "href": "Chapter6.html#summary",
+    "title": "2  Chapter 6",
+    "section": "2.1 Summary",
+    "text": "2.1 Summary\n\n\n\n\nMindmap\n\n\n\n ### Machine Learning\n\nWhat is Machine Learning? Machine learning = science of computer modeling of learning process;Machine learning this is a search through all the data to explain the input data and can be used on new input data.\n\n\n2.1.0.1 Classification and regression trees (CART)\n1.Classification trees classify data into two or more discrete (can only have certain values) categories 2. Regression trees predict continuous dependent variable\n\n\n\n\nDecision Tree\n\n\n\n Data source:Digital Vidya * Use Gini impurityto quantify an impure leaf. Gini impurity= 1-(probability of yes)^2-(the probability of no)^2\n\n\n2.1.0.2 Random Forests\n\nRF characteristic\n\n\nWe get many, many different trees = a forest Run the data we have down the trees Which option gets more votes based on all the trees: Make decision tree from random number of variables (never all of them)\nWe get many, many different trees = a forest\nRun the data we have down the trees\nWhich option gets more votes based on all the trees\nBootstrapping (re-sampling by replacement data to make a decision = bagging):For each tree about 70% of the training data is used in the bootstrap, 30% is left out of the bag (OOB)\nProportion of OOB incorrectly classified = OOB error\nOften the number of variables per tree is calculated from square root of variables in the original data.\nOften the number of variables per tree is calculated from square root of variables in the original data.\nOut of Bag Error:All trees that didn’t have the values;Average prediction error - number of correct predicted/total\nValidation data: never included within the decision tree\n\n\n\n2.1.1 Unsupervised\n\n2.1.1.1 Maximum Likelyhood\n\n\n\n\n\n\n\n\n\nBasics\nSpecifics\n\n\n\n\nDecision rule classifier\nFrom histogram to probability density function\n\n\nUses probability\nIn imagery this is n dimensional multivariate normal density function\n\n\nTakes the image and assigns pixel to the most probable land cover type.\nEach pixel from image data is passed to the maximum likelihood rule > assigns landover to the largest product.\n\n\nTakes the image and assigns pixel to the most probable land cover type.\nBased on probability, the data (landcover) most probably to have the values in our pixel\n\n\n\n\n\nContent source:Andrew Maclachlan ### Supervised\n\n\n2.1.1.2 Support Vector Machine (SVM)\nSupport Vector Machine (SVM) is a relatively simple Supervised Machine Learning Algorithm used for classification and/or regression. It is more preferred for classification but is sometimes very useful for regression as well. Basically, SVM finds a hyper-plane that creates a boundary between the types of data. In 2-dimensional space, this hyper-plane is nothing but a line. In SVM, we plot each data item in the dataset in an N-dimensional space, where N is the number of features/attributes in the data. Next, find the optimal hyperplane to separate the data. So by this, you must have understood that inherently, SVM can only perform binary classification (i.e., choose between two classes). However, there are various techniques to use for multi-class problems. Support Vector Machine for Multi-CLass Problems To perform SVM on multi-class problems, we can create a binary classifier for each class of the data. The two results of each classifier will be :\nThe data point belongs to that class OR The data point does not belong to that class. For example, in a class of fruits, to perform multi-class classification, we can create a binary classifier for each fruit. For say, the ‘mango’ class, there will be a binary classifier to predict if it IS a mango OR it is NOT a mango. The classifier with the highest score is chosen as the output of the SVM. SVM for complex (Non Linearly Separable) SVM works very well without any modifications for linearly separable data. Linearly Separable Data is any data that can be plotted in a graph and can be separated into classes using a straight line.   Data source:geeksforgeeks"
+  },
+  {
+    "objectID": "Chapter6.html#applications",
+    "href": "Chapter6.html#applications",
+    "title": "2  Chapter 6",
+    "section": "2.2 Applications",
+    "text": "2.2 Applications"
+  },
+  {
+    "objectID": "Chapter6.html#reflection",
+    "href": "Chapter6.html#reflection",
+    "title": "2  Chapter 6",
+    "section": "2.3 Reflection",
+    "text": "2.3 Reflection"
+  },
+  {
+    "objectID": "Chapter7.html#summary",
+    "href": "Chapter7.html#summary",
+    "title": "3  Chapter 7",
+    "section": "3.1 Summary",
+    "text": "3.1 Summary\n\n3.1.1 Object based image analysis and sub pixel analysis\n\n3.1.1.1 Object based image analysis\n\nInstead of considering cells we consider shapes based on the similarity (homogeneity) or difference (heterogeneity) of the cells = superpixels SLIC (Simple Linear Iterative Clustering) Algorithm for Superpixel generation is the most common method\n\n\n\n3.1.1.2 Sub pixel analysis\n\nSMA determines the proportion or abundance of landcover per pixel\nthe assumption that reflectance measured at each pixel is represented by the linear sum of endmembers weighted by the associated endmember fraction\nTypically we have a few endmembers that are spectrally pure\nSum of end member reflectance * fraction contribution to best-fit mixed spectrum\n\n\n\n\n\nFormula\n\n\n\n\n\n\n3.1.2 Assess the accuracy\n\nConfusion Matrix: Date: February 17, 2019 Author: Rachel Draelos, MD, PhD Confusion matrices are calculated using the predictions of a model on a data set. By looking at a confusion matrix, you can gain a better understanding of the strengths and weaknesses of your model, and you can better compare two alternative models to understand which one is better for your application. Traditionally, a confusion matrix is calculated using a model’s predictions on a held-out test set.\n\n\n\n\nConfusion Matrix\n\n\n\nData source:glassboxmedicine\nproducer’s accuracy defined as the fraction of correctly classified pixels (TP) compared to ground truth data (TP+FN)*TP/(TP+FN)\nuser’s accuracy defined as the fraction of correctly classified pixels (TP) relative to all others classified as a particular land cover (TP+FP)*TP/(TP+FP)-FP is different\noverall accuracy represents the combined fraction of correctly classified pixels (TP +TN) across all land cover types (TP+FP+FN+TN)*(TP+TN)/(TP+FP+TN+FN) Source: Barsi et al. 2018 Accuracy Dimensions in Remote Sensing\nA good Kappa value\n\n\n\n\nKappa Value\n\n\n\n\nSource: Explaining the unsuitability of the kappa coefficient in the assessment and comparison of the accuracy of thematic maps obtained by image classification. Foody 2020\n\n\n3.1.3 Cross Validation\nWhen we do the steps of fixed partition, we should consider Spatial autocorrelation between training and test sets!\n\n\n3.1.4 Spatial Cross Validation\n\nspatially partition the folded data, folds are from cross validation \ndisjoint (no common boundary) using k -means clustering (number of points and a distance) \nsame as cross validation but with clustering to the folds…\nstops our training data and testing data being near each other…\n\n\nin other words this makes sure all the points (or pixels) we train the model with a far away from the points (or pixels) we test the model with.\n\n\n\n\nCross Validation vs. Spatial Cross Validation\n\n\n\n\nSource: Illustration of default cross-validation vs. spatial cross-validation. Image from Lovelace, et al."
+  },
+  {
+    "objectID": "Chapter7.html#applications",
+    "href": "Chapter7.html#applications",
+    "title": "3  Chapter 7",
+    "section": "3.2 Applications",
+    "text": "3.2 Applications"
+  },
+  {
+    "objectID": "Chapter7.html#reflection",
+    "href": "Chapter7.html#reflection",
+    "title": "3  Chapter 7",
+    "section": "3.3 Reflection",
+    "text": "3.3 Reflection"
+  },
+  {
+    "objectID": "index.html#about-yuanru-gao",
+    "href": "index.html#about-yuanru-gao",
+    "title": "rsbook",
+    "section": "About Yuanru Gao",
+    "text": "About Yuanru Gao\n My name is Yuanru Gao. I obtained a bachelor’s degree in Geographic Information Science in China in 2022. My areas of interest are WebGIS and indoor navigation. During my undergraduate studies, I was awarded a professional patented software copyright for Jinan Wisdom Spring System for Tourism V1.0. I am now studying Urban Spatial Science at University College London to pursue my dream as a spatial science researcher. As you see above, I am also a dancer and actress. In my spare time, I would like to go to take a dance video as long as I have new inspiration."
   }
 ]
