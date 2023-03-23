@@ -1,0 +1,66 @@
+# Chapter 3 - Remote sensing data and Corrections
+## Summary
+
+
+### Corrections
+
+#### Geometric correction
+
+* [Image distortions due to](https://zhuanlan.zhihu.com/p/435401966)
+1. Image distortion due to sensor imaging method
+2. Effect of changes in orientation elements outside the sensor
+3. Image point displacement due to terrain undulation
+4. Image distortion due to earth curvature
+5. Image distortion due to atmospheric refraction
+6. Effects of the Earth's rotation
+Source:Principles and application of remote sensing by Jiabing Sun 
+* [Solution](https://andrewmaclachlan.github.io/CASA0023-lecture-3/?panelset3=dn2&panelset4=ratio2&panelset5=pca2#20)
+1. Identify Ground Control Points (GPS) to match known points in the image and a reference dataset</br>
+(1)local map</br>
+(2)another image</br>
+(3)GPS data from handheld device
+2. We take the coordinates and model them to give geometric transformation coefficients</br>
+3. linear regression with our distorted x or y as the dependent or independent
+4.  plot these and try to minimise the RMSE [(Jensen sets a RMSE value of 0.5)](https://app.kortext.com/identity/?returnurl=https://read.kortext.com/reader/pdf/1872407/247)</br>
+5. There are many transformation algorithms available to model the actual coordinates
+<center>![](image/formula_jhjz.png){width="50%"}</center></br>
+then..</br>
+<center>![](image/formulajhjz2.png){width="50%"}</center>
+- This means for every value in the output (gold standard) pixel we can get a value in the original input image. The images are distorted as so might not completely overlap
+6. RMSE
+(1) (observed - predicted (the residual))^2</br>
+(2) sum them and divide by number of data points</br>
+(3) square root that total</br>
+7. Re-sample
+<center>![](image/Geometric-correction-procedures.png){width="70%"}</center>
+
+Source:[Abdul Basith](https://www.researchgate.net/figure/Geometric-correction-procedures_fig7_320710942)
+
+
+#### Atmospheric correction
+1. Relative(to something)</br>
+Normalize intensities of different bands within a single image;
+Normalise intensities of bands from many dates to one date
+2. Absolute(definitive)</br>
+(1)Change **digital brightness values** into scaled surface reflectance, then compare these**scaled surface reflectance values** across the planet</br>
+(2)atmospheric radiative transfer models</br>
+(3)However, nearly all assume atmospheric measurements are available which are used to "invert" the image radiance to scaled surface reflectance</br>
+(4)The scattering and absorption information comes from atmopshierc radiative transfer code such as MODTRAN 4+ and the Second Simulation of the Satellite Signal in the Solar Spectrum (6S)</br>
+<center>![Flowchart for various relative and absolute methods for atmospheric correction of satellite measured radiance.](image/Flowchart-for-various-relative-and-absolute-methods-for-atmospheric-correction-of.png){width="80%"}</center>
+Source:[researchgate](https://www.researchgate.net/figure/Flowchart-for-various-relative-and-absolute-methods-for-atmospheric-correction-of_fig4_319331100)
+
+#### Orthorectification / Topographic correction
+What is orthorectified imagery - Using elevation to enable accurate image georeferencing</br>
+Imagery has an amazing amount of information, but raw aerial or satellite imagery cannot be used in a GIS until it has been processed such that all pixels are in an accurate (x,y) position on the ground.The orthorectification process requires: An accurate description of the sensor, typically called the sensor model; detailed information about the sensor location and orientation for every image; and an accurate terrain model, such as the World Elevation service available from ArcGIS Online. After imagery has been orthorectified, it can be used within a GIS and accurately overlaid with other data layers.</br>
+<center>![A view captured from an oblique angle](image/imagery.jpg){width="70%"}</center>
+
+#### Radiometric
+- Radiometric calibration, also known as radiometric correction, is important to successfully convert raw digital image data from satellite or aerial sensors to a common physical scale based on **known reflectance measurements** taken from objects on the ground’s surface.  This type of correction is important for reliable quantitative measurements of the imagery.
+<center>![The process of radiometric correction](image/rc.png){width="40%"}</center>
+[Source:](https://www.ncl.ac.uk/tcmweb/bilko/module7/lesson3.pdf)
+
+
+
+## Application
+
+## Reflection

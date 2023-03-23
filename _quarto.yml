@@ -4,11 +4,13 @@ project:
 
 book:
   title: "rsbook"
-  author: "Jane Doe"
-  date: "26/01/2023"
+  author: "Yuanru Gao"
+  date: "23/03/2023"
   chapters:
     - index.qmd
     - Chapter1.qmd
+    - Chapter6.qmd
+    - Chapter7.qmd
     - summary.qmd
     - references.qmd
 

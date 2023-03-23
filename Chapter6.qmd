@@ -1,0 +1,61 @@
+# Chapter 6
+
+## Summary
+
+<center>![Mindmap](image/week6mindmap.jpg)</center>
+
+</br> \### Machine Learning
+
+-   What is Machine Learning?</br> Machine learning = science of computer modeling of learning process;Machine learning this is a search through all the data to explain the input data and can be used on new input data.
+
+#### Classification and regression trees (CART)
+
+1.Classification trees classify data into two or more discrete (can only have certain values) categories</br> 2. Regression trees predict continuous dependent variable
+
+<center>![Decision Tree](image/Decisiontree.png)</center>
+
+</br> Data source:[Digital Vidya](https://www.digitalvidya.com/blog/classification-and-regression-trees/) \* Use **Gini impurity**to quantify an impure leaf.</br> Gini impurity= 1-(probability of yes)\^2-(the probability of no)\^2
+
+#### Random Forests
+
+-   RF characteristic
+
+1.  We get many, many different trees = a forest Run the data we have down the trees Which option gets more votes based on all the trees: Make decision tree from random number of variables (never all of them)</br>
+2.  We get many, many different trees = a forest</br>
+3.  Run the data we have down the trees</br>
+4.  Which option gets more votes based on all the trees</br>
+5.  Bootstrapping (re-sampling by replacement data to make a decision = bagging):For each tree about 70% of the training data is used in the bootstrap, 30% is left out of the bag (OOB)</br>
+6.  Proportion of OOB incorrectly classified = OOB error</br>
+7.  Often the number of variables per tree is calculated from square root of variables in the original data.</br>
+8.  Often the number of variables per tree is calculated from square root of variables in the original data.</br>
+9.  Out of Bag Error:All trees that didn't have the values;Average prediction error - number of correct predicted/total</br>
+10. Validation data: never included within the decision tree</br>
+
+### Unsupervised
+
+#### Maximum Likelyhood
+
+```{r table, echo=FALSE}
+library(knitr)
+
+# Create a 5x2 data frame
+my_data <- data.frame(
+  Basics = c("Decision rule classifier", "Uses probability", "Takes the image and assigns pixel to the most probable land cover type.", "Takes the image and assigns pixel to the most probable land cover type."),
+  Specifics = c("From histogram to probability density function", "In imagery this is n dimensional multivariate normal density function", "Each pixel from image data is passed to the maximum likelihood rule > assigns landover to the largest product.", "Based on probability, the data (landcover) most probably to have the values in our pixel")
+)
+
+# Use kable() to create the table
+kable(my_data, format = "markdown")
+```
+
+Content source:[Andrew Maclachlan](https://andrewmaclachlan.github.io/CASA0023-lecture-6/#73) \### Supervised
+
+#### Support Vector Machine (SVM)
+
+Support Vector Machine (SVM) is a relatively simple **Supervised Machine Learning Algorithm** used for classification and/or regression. It is more preferred for classification but is sometimes very useful for regression as well. Basically, SVM finds a hyper-plane that creates a boundary between the types of data. In 2-dimensional space, this hyper-plane is nothing but a line. In SVM, we plot each data item in the dataset in an N-dimensional space, where N is the number of features/attributes in the data. Next, find the optimal hyperplane to separate the data. So by this, you must have understood that inherently, SVM can only perform binary classification (i.e., choose between two classes). However, there are various techniques to use for multi-class problems. Support Vector Machine for Multi-CLass Problems To perform SVM on multi-class problems, we can create a binary classifier for each class of the data. The two results of each classifier will be :
+
+The data point belongs to that class OR The data point does not belong to that class. For example, in a class of fruits, to perform multi-class classification, we can create a binary classifier for each fruit. For say, the 'mango' class, there will be a binary classifier to predict if it IS a mango OR it is NOT a mango. The classifier with the highest score is chosen as the output of the SVM. SVM for complex (Non Linearly Separable) SVM works very well without any modifications for linearly separable data. Linearly Separable Data is any data that can be plotted in a graph and can be separated into classes using a straight line. ![SVM](image/Linear.png) </br> Data source:[geeksforgeeks](https://www.geeksforgeeks.org/introduction-to-support-vector-machines-svm/)
+
+## Applications
+
+## Reflection

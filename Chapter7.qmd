@@ -1,0 +1,56 @@
+# Chapter 7
+
+## Summary
+
+### Object based image analysis and sub pixel analysis
+
+#### Object based image analysis
+
+-   Instead of considering cells we consider shapes based on the similarity (homogeneity) or difference (heterogeneity) of the cells = superpixels</br> SLIC (Simple Linear Iterative Clustering) Algorithm for Superpixel generation is the most common method</br>
+
+#### Sub pixel analysis
+
+1.  SMA determines the proportion or abundance of landcover per pixel</br>
+2.  the assumption that reflectance measured at each pixel is represented by the linear sum of endmembers weighted by the associated endmember fraction</br>
+3.  Typically we have a few endmembers that are spectrally pure</br>
+4.  Sum of end member reflectance \* fraction contribution to best-fit mixed spectrum</br>
+
+<center>![Formula](image/Formula.png){width="50%"}</center>
+
+### Assess the accuracy
+
+-   Confusion Matrix: Date: February 17, 2019 Author: Rachel Draelos, MD, PhD Confusion matrices are calculated using the predictions of a model on a data set. By looking at a confusion matrix, you can gain a better understanding of the strengths and weaknesses of your model, and you can better compare two alternative models to understand which one is better for your application. Traditionally, a confusion matrix is calculated using a model's predictions on a held-out test set.</br>
+
+    <center>![Confusion Matrix](image/confusion-matrix.png)</center>
+
+    Data source:[glassboxmedicine](https://glassboxmedicine.com/2019/02/17/measuring-performance-the-confusion-matrix/)
+
+-   producer's accuracy defined as the fraction of correctly classified pixels (TP) compared to ground truth data (TP+FN)\*TP/(TP+FN)</br>
+
+-   user's accuracy defined as the fraction of correctly classified pixels (TP) relative to all others classified as a particular land cover (TP+FP)\*TP/(TP+FP)-FP is different</br>
+
+-   overall accuracy represents the combined fraction of correctly classified pixels (TP +TN) across all land cover types (TP+FP+FN+TN)\*(TP+TN)/(TP+FP+TN+FN)</br> Source: [Barsi et al. 2018 Accuracy Dimensions in Remote Sensing](https://www.int-arch-photogramm-remote-sens-spatial-inf-sci.net/XLII-3/61/2018/isprs-archives-XLII-3-61-2018.pdf)
+
+-   A good Kappa value</br>
+
+    <center>![Kappa Value](image/Kappa_issue1.png)</center>
+
+Source: [Explaining the unsuitability of the kappa coefficient in the assessment and comparison of the accuracy of thematic maps obtained by image classification. Foody 2020](https://www.sciencedirect.com/science/article/pii/S0034425719306509) 
+
+### Cross Validation 
+When we do the steps of fixed partition, we should consider **Spatial autocorrelation between training and test sets!**</br>
+
+### Spatial Cross Validation 
+
+1. spatially partition the folded data, folds are from cross validation </br>
+2. disjoint (no common boundary) using k -means clustering (number of points and a distance) </br>
+3. same as cross validation but with clustering to the folds...</br> 
+4. stops our training data and testing data being near each other...</br>
+- in other words this makes sure all the points (or pixels) we train the model with a far away from the points (or pixels) we test the model with. 
+ <center>![Cross Validation vs. Spatial Cross Validation](image/0_ALoitT61zdnlyrGN.jpg)</center>
+
+Source: [Illustration of default cross-validation vs. spatial cross-validation. Image from Lovelace, et al.](https://towardsdatascience.com/spatial-cross-validation-using-scikit-learn-74cb8ffe0ab9) 
+
+## Applications
+
+## Reflection
