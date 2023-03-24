@@ -10,7 +10,7 @@ book:
     logo: image/OIP.jpeg
     collapse: true
     collapse-below: sm
-    background: "rgb(37, 150, 190)"
+    background: "#c19de1"
     foreground: "#ffffff"
     #reader-mode: true
     search: true
