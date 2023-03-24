@@ -42,11 +42,11 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 20,
   "language": {
     "search-no-results-text": "No results",
@@ -64,10 +64,40 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./image/OIP." alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Remote Sensing Cities and Environments Book</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="./linkedin.com/in/yuanru-gao-687b31254"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/GaoYuanru/RS"><i class="bi bi-github" role="img" aria-label="Source Code">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chapter 7 - Classification II</span></h1>
@@ -78,14 +108,9 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Remote Sensing Cities and Environments Book</a> 
-    </div>
-      </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -163,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">7.3</span>  Reflection</a></li>
   <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="toc-section-number">7.4</span>  Reference</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/GaoYuanru/RS/edit/main/Chapter7.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/GaoYuanru/RS/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -269,10 +294,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="applications" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">7.2</span> Applications</h2>
-<p>Spatiotemporal distribution of labeled data can bias the validation and selection of supervised learning algorithms: A marine remote sensing example<a href="https://reader.elsevier.com/reader/sd/pii/S0924271622000648?token=A30B30C45136C2B255CA501DD887309EDD06048193DC272DADC648C0C056B20A2FD2D2DD1EEF6434F88F7953E5EF5EEA&amp;originRegion=eu-west-1&amp;originCreation=20230323151158">(Stock, 2022)</a><br></p>
 <ul>
-<li>This paper highlights the potential biases that can occur when using <strong>supervised learning algorithms</strong> for marine remote sensing applications. Specifically, it highlights the importance of careful statistical design when creating and validating tagged datasets for such applications. The paper also compares different validation statistical designs and shows that a combination of using multiple validation methods and critically discussing error estimates can help mitigate these biases. One of the more classic is the <strong>10-fold cross-validation</strong> approach, where the data is divided into 10 random subsets of equal size, one after the other, with each fold kept only once, to validate the model trained on the remaining 9 folds. There is also <strong>spatial leave-one-out cross-validation</strong>, in which each observation is left out only once for validation, while all other observations are used for training. This approach has been modified to account for spatially autocorrelated observations by excluding not only the held-out observation, but also all observations within a distance threshold. It is clear from this article that no single validation method provides a comprehensive understanding of algorithm error, which highlights the importance of supervised learning using imperfect spatio-temporal data as a difficult data exploration problem. It is therefore also suggested that several complementary methods are regularly used to estimate the predictive accuracy of supervised learning algorithms, and <strong>statistical accuracy assessment</strong>s that consider representativeness, dependence and smoothness issues are critically discussed.<br></li>
+<li>Spatiotemporal distribution of labeled data can bias the validation and selection of supervised learning algorithms: A marine remote sensing example<a href="https://reader.elsevier.com/reader/sd/pii/S0924271622000648?token=A30B30C45136C2B255CA501DD887309EDD06048193DC272DADC648C0C056B20A2FD2D2DD1EEF6434F88F7953E5EF5EEA&amp;originRegion=eu-west-1&amp;originCreation=20230323151158">(Stock, 2022)</a><br></li>
 </ul>
+<p>This paper highlights the potential biases that can occur when using <strong>supervised learning algorithms</strong> for marine remote sensing applications. Specifically, it highlights the importance of careful statistical design when creating and validating tagged datasets for such applications. The paper also compares different validation statistical designs and shows that a combination of using multiple validation methods and critically discussing error estimates can help mitigate these biases. One of the more classic is the <strong>10-fold cross-validation</strong> approach, where the data is divided into 10 random subsets of equal size, one after the other, with each fold kept only once, to validate the model trained on the remaining 9 folds. There is also <strong>spatial leave-one-out cross-validation</strong>, in which each observation is left out only once for validation, while all other observations are used for training. This approach has been modified to account for spatially autocorrelated observations by excluding not only the held-out observation, but also all observations within a distance threshold. It is clear from this article that no single validation method provides a comprehensive understanding of algorithm error, which highlights the importance of supervised learning using imperfect spatio-temporal data as a difficult data exploration problem. It is therefore also suggested that several complementary methods are regularly used to estimate the predictive accuracy of supervised learning algorithms, and <strong>statistical accuracy assessment</strong>s that consider representativeness, dependence and smoothness issues are critically discussed.<br></p>
 <center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

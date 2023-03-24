@@ -43,7 +43,10 @@
 
 -   This means for every value in the output (gold standard) pixel we can get a value in the original input image. The images are distorted as so might not completely overlap
 
-6.  RMSE
+6.  ::: {.callout-note style="color" appearance="simple"}
+    ::: {.callout-note appearance="simple"}
+    :::
+    :::
 
 <!-- -->
 
@@ -57,7 +60,10 @@
 
 <!-- -->
 
-7.  Re-sample
+7.  ::: {.callout-note style="color" appearance="simple"}
+    ::: {.callout-note appearance="simple"}
+    :::
+    :::
 
     <center>![](image/Geometric-correction-procedures.png){width="70%"}</center>
 

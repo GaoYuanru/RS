@@ -6,6 +6,24 @@ book:
   title: "Remote Sensing Cities and Environments Book"
   author: "Yuanru Gao"
   date: "2023/03/23"
+  navbar: 
+    logo: image/OIP.
+    collapse: true
+    collapse-below: sm
+    background: "#000080"
+    foreground: "#FFFFF0"
+    #reader-mode: true
+    search: true
+    right:
+      - icon: linkedin
+        href: linkedin.com/in/yuanru-gao-687b31254
+      - icon: github
+  sidebar:
+    title: "Remote"
+    style: floating
+    reader-mode: true
+  repo-url: https://github.com/GaoYuanru/RS
+  repo-actions: [edit, issue]
   chapters:
     - index.qmd
     - Chapter1.qmd
