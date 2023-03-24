@@ -43,27 +43,17 @@
 
 -   This means for every value in the output (gold standard) pixel we can get a value in the original input image. The images are distorted as so might not completely overlap
 
-6.  ::: {.callout-note style="color" appearance="simple"}
-    ::: {.callout-note appearance="simple"}
-    :::
-    :::
+6. RMSE
 
-<!-- -->
 
-(1) ::: {.callout-note appearance="simple"}
-    -   (observed - predicted (the residual))\^2</br>
+(1)(observed - predicted (the residual))\^2</br>
 
-    -   sum them and divide by number of data points</br>
+(2)sum them and divide by number of data points</br>
 
-    -   square root that total</br>
-    :::
+(3) square root that total</br>
 
-<!-- -->
 
-7.  ::: {.callout-note style="color" appearance="simple"}
-    ::: {.callout-note appearance="simple"}
-    :::
-    :::
+7. Resample
 
     <center>![](image/Geometric-correction-procedures.png){width="70%"}</center>
 
