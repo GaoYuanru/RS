@@ -4,7 +4,7 @@
 
 -   Shanghai</br> Shanghai, is one of the four direct-administered municipalities of the People's Republic of China (PRC). The city is located on the southern estuary of the Yangtze River, with the Huangpu River flowing through it. The population of the city proper is the third most populous in the world, with 24.89 million inhabitants in 2021, while the urban area is the most populous in China with 39,300,000 residents. As of 2018, the Greater Shanghai metropolitan area was estimated to produce a gross metropolitan product (nominal) of nearly 9.1 trillion RMB (\$1.33 trillion). Shanghai is one of the world's major centers for finance, business and economics, research, science and technology, manufacturing, transportation, tourism, and culture, and the Port of Shanghai is the world's busiest container port.</br> Source: [wikipedia](https://en.wikipedia.org/wiki/Shanghai)
 
-    <center>![Shanghai](image/download.jpeg)</center>
+<center>![City Shanghai](image/download.jpeg)</center>
 
 ## summary of the policy
 
@@ -34,9 +34,9 @@ Source:[Shanghai EcologicalandEnvironmental Bulletin](https://sthj.sh.gov.cn/cms
 
 3.  [Synthetic Aperture Radar](https://www.capellaspace.com/sar-101-an-introduction-to-synthetic-aperture-radar/)</br> Synthetic aperture radar is a way of creating an image using radio waves. The radio waves used in SAR typically range from approximately 3 cm up to a few meters in wavelength, which is much longer than the wavelength of visible light, used in making optical images. These wavelengths fall within the microwave part of the spectrum in the figure below.
 
-    <center>![Comparison of wavelength, frequency, and energy for the electromagnetic spectrum.](image/SpaceNet6-Blog_wavelength-spectrum.png)</center>
+<center>![Comparison of wavelength, frequency, and energy for the electromagnetic spectrum.](image/SpaceNet6-Blog_wavelength-spectrum.png)</center>
 
-    Source: [NASA's Imagine the Universe](https://imagine.gsfc.nasa.gov/science/toolbox/emspectrum1.html)
+Source: [NASA's Imagine the Universe](https://imagine.gsfc.nasa.gov/science/toolbox/emspectrum1.html)
 
 ## Application - How it works
 
