@@ -2,3 +2,16 @@
 
 ::: {#refs}
 :::
+Ramsey, M., Flynn, I., 2020. The Spatial and Spectral Resolution of ASTER Infrared Image Data: A Paradigm Shift in Volcanological Remote Sensing. Remote Sens. 12, 738. https://doi.org/10.3390/rs12040738</br>
+Verde, N., Mallinis, G., Tsakiri-Strati, M., Georgiadis, C., Patias, P., 2018. Assessment of Radiometric Resolution Impact on Remote Sensing Data Classification Accuracy. Remote Sens. 10, 1267. https://doi.org/10.3390/rs10081267</br>
+Bergsma, E.W.J., Almar, R., 2020. Coastal coverage of ESA’ Sentinel 2 mission. Adv. Space Res. 65, 2636–2644. https://doi.org/10.1016/j.asr.2020.03.001</br>
+Mishra, M.K., Rathore, P.S., Misra, A., Kumar, R., 2020. Atmospheric Correction of Multispectral VNIR Remote Sensing Data: Algorithm and Inter‐sensor Comparison of Aerosol and Surface Reflectance Products. Earth Space Sci. 7. https://doi.org/10.1029/2019EA000710</br>
+Schott, J.R., Hook, S.J., Barsi, J.A., Markham, B.L., Miller, J., Padula, F.P., Raqueno, N.G., 2012. Thermal infrared radiometric calibration of the entire Landsat 4, 5, and 7 archive (1982–2010). Remote Sens. Environ. 122, 41–49. https://doi.org/10.1016/j.rse.2011.07.022</br>
+Li, H., Zhang, G., Zhong, Q., Xing, L., Du, H., 2023. Prediction of Urban Forest Aboveground Carbon Using Machine Learning Based on Landsat 8 and Sentinel-2: A Case Study of Shanghai, China. Remote Sens. 15, 284. https://doi.org/10.3390/rs15010284</br> 
+Sekertekin, A., Bonafoni, S., 2020. Land Surface Temperature Retrieval from Landsat 5, 7, and 8 over Rural Areas: Assessment of Different Retrieval Algorithms and Emissivity Models and Toolbox Implementation. Remote Sens. 12, 294. https://doi.org/10.3390/rs12020294</br>
+Venkatappa, M., Sasaki, N., Han, P., Abe, I., 2021. Impacts of droughts and floods on croplands and crop production in Southeast Asia -- An application of Google Earth Engine. Sci. Total Environ. 795, 148829. https://doi.org/10.1016/j.scitotenv.2021.148829</br>
+Dong, L., Du, H., Mao, F., Han, N., Li, X., Zhou, G., Zhu, D., Zheng, J., Zhang, M., Xing, L., Liu, T., 2020. Very High Resolution Remote Sensing Imagery Classification Using a Fusion of Random Forest and Deep Learning Technique---Subtropical Area for Example. IEEE J. Sel. Top. Appl. Earth Obs. Remote Sens. 13, 113--128. https://doi.org/10.1109/JSTARS.2019.2953234 </br>
+Pal, M., 2005. Random forest classifier for remote sensing classification. Int. J. Remote Sens. 26, 217--222. https://doi.org/10.1080/01431160412331269698</br>
+Stock, A., 2022. Spatiotemporal distribution of labeled data can bias the validation and selection of supervised learning algorithms: A marine remote sensing example. ISPRS J. Photogramm. Remote Sens. 187, 46--60. https://doi.org/10.1016/j.isprsjprs.2022.02.023</br>
+Oukawa, G.Y., Krecl, P., Targino, A.C., 2022. Fine-scale modeling of the urban heat island: A comparison of multiple linear regression and random forest approaches. Sci. Total Environ. 815, 152836. https://doi.org/10.1016/j.scitotenv.2021.152836</br> Senanayake, I.P., Welivitiya, W.D.D.P., Nadeeka, P.M., 2013. Remote sensing based analysis of urban heat islands with vegetation cover in Colombo city, Sri Lanka using Landsat-7 ETM+ data. Urban Clim. 5, 19--35. https://doi.org/10.1016/j.uclim.2013.07.004
+

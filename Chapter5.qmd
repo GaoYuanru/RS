@@ -1,42 +1,51 @@
-# Chapter 5
+# Chapter 5 - Google Earth Engine
 
 ## Summary
 
 ### What is Google Earth Engine
-1. Geospatial processing service
-2. It permits geospatial analysis at scale
-3. Process massive datasets
-4. Store data on servers
-5. Takes the code we have written and applies it for us
+
+1.  Geospatial processing service
+2.  It permits geospatial analysis at scale
+3.  Process massive datasets
+4.  Store data on servers
+5.  Takes the code we have written and applies it for us
 
 ### Difference in data name
-Image-> raster(has bands);</br>
-Feature-> Vector(has geometry and attributes)</br>
-Stack-> Collection</br>
+
+Image-\> raster(has bands);</br> Feature-\> Vector(has geometry and attributes)</br> Stack-\> Collection</br>
+
 <center>![Client vs Server](image/client_server.jpg){width="70%"}</center>
+
 Source:[pintrest/codeboxx](https://www.pinterest.co.uk/pin/764837949191948083/)
+
 ### Pratical
 
 #### Basic
-1. Load data
+
+1.  Load data
 
 ```{r, eval=FALSE}
 var dataset = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
     .filterDate('2022-01-01', '2022-02-01');
 ```
-2. Add it to our map, then the final Landsat 9 here is what the layer will be called on the map.
+
+2.  Add it to our map, then the final Landsat 9 here is what the layer will be called on the map.
+
 ```{r, eval=FALSE}
 Map.addLayer(dataset, {bands: ["SR_B4", "SR_B3", "SR_B2"]}, "Landsat 9")
 ```
-3. Single images</br>
-select a single image from the collection by filtering using the specific date, which you can get from the console window when printing the images within the collection. Landsat (and most other EO datasets) have the date within the file path name.
+
+3.  Single images</br> select a single image from the collection by filtering using the specific date, which you can get from the console window when printing the images within the collection. Landsat (and most other EO datasets) have the date within the file path name.
+
 ```{r, eval=FALSE}
 var oneimage = ee.ImageCollection('LANDSAT/LC09/C02/T1_L2')
   .filterDate('2022-04-03', '2022-04-04')
   .filterBounds(india);  // Intersecting ROI
 ```
+
 <center>![Single image result](image/Singleimg.png){width="70%"}</center>
-4. Make a function and then calling our collection to the function
+
+4.  Make a function and then calling our collection to the function
 
 ```{r eval=FALSE}
 // Applies scaling factors in a function
@@ -51,7 +60,9 @@ oneimage_study_area_cloud_scale = oneimage_study_area_cloud.map(applyScaleFactor
 // apply the median reducer
 var oneimage_study_area_cloud_scale_median = oneimage_study_area_cloud_scale.reduce(ee.Reducer.median());
 ```
+
 Then we map this result
+
 ```{r eval=FALSE}
 // set up some of the visualisation paramters 
 var vis_params = {
@@ -62,8 +73,9 @@ var vis_params = {
 // add a layer to the map
 Map.addLayer(oneimage_study_area_cloud_scale_median, vis_params, 'True Color (432)');
 ```
-5. Clip</br>
-Clip those images to our current study area, we also used the interactive visulisation box to select my min and max values.
+
+5.  Clip</br> Clip those images to our current study area, we also used the interactive visulisation box to select my min and max values.
+
 ```{r, eval=FALSE}
 var clip = meanImage.clip(india)
   .select(['SR_B1', 'SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7']);
@@ -84,14 +96,11 @@ Map.addLayer(clip, vis_params3, 'clip');
 
 #### PCA
 
-First method I use:
+First method I use (part of codes):
 
 Source: [ZhiHu](https://zhuanlan.zhihu.com/p/419712672)
 
-<div style="height: 300px; overflow-y: scroll;">
-  <pre>
-    <code>
-      
+```{r eval=FALSE}
 //- PCA
 // Principal Components Analysis EXAMPLE
 
@@ -135,92 +144,14 @@ var getNewBandNames = function(prefix) {
 var getPrincipalComponents = function(centered, scale, region) {
   // Collapse the bands of the image into a 1D array per pixel.
   var arrays = centered.toArray();
-
-  // Compute the covariance of the bands within the region.
-  var covar = arrays.reduceRegion({
-    reducer: ee.Reducer.centeredCovariance(),
-    geometry: region,
-    scale: scale, 
-    maxPixels: 1e9
-  });
-
-  // Get the 'array' covariance result and cast to an array.
-  // This represents the band-to-band covariance within the region.
-  var covarArray = ee.Array(covar.get('array'));
-
-  // Perform an eigen analysis and slice apart the values and vectors.
-  var eigens = covarArray.eigen();
-
-  // This is a P-length vector of Eigenvalues.
-  var eigenValues = eigens.slice(1, 0, 1);
-  // This is a PxP matrix with eigenvectors in rows.
-  var eigenVectors = eigens.slice(1, 1);
-
-  // Convert the array image to 2D arrays for matrix computations.
-  var arrayImage = arrays.toArray(1);
-
-  // Left multiply the image array by the matrix of eigenvectors.
-  var principalComponents = ee.Image(eigenVectors).matrixMultiply(arrayImage);
-
-  // Turn the square roots of the Eigenvalues into a P-band image.
-  var sdImage = ee.Image(eigenValues.sqrt())
-    .arrayProject([0]).arrayFlatten([getNewBandNames('sd')]);
-
-  // Turn the PCs into a P-band image, normalized by SD.
-  return principalComponents
-    // Throw out an an unneeded dimension, [[]] -> [].
-    .arrayProject([0])
-    // Make the one band array image a multi-band image, [] -> image.
-    .arrayFlatten([getNewBandNames('pc')])
-    // Normalize the PCs by their SDs.
-    .divide(sdImage);
-};
-// [END principal_components]
-
-// Get the PCs at the specified scale and in the specified region
-var pcImage = getPrincipalComponents(centered, scale, region);
-
-// Plot each PC as a new layer
-for (var i=0; i<bandNames.length().getInfo(); i++) {
-  var band = pcImage.bandNames().get(i).getInfo();
-  Map.addLayer(pcImage.select([band]), {min:-2, max:2}, band);
-}
-Map.addLayer(pcImage, {bands: ['pc2', 'pc1'], min: -2, max: 2}, 'PCA bands 1 and 2');
-//-Exporting
-// select the bands you want
-var PCA_out = pcImage.select(['pc1', 'pc2'])
-
-var projection = PCA_out.select('pc1').projection().getInfo();
-print(projection, "output_projection")
-
-var bounds = india.geometry();
-
-// Export the image, specifying the CRS, transform, and region.
-Export.image.toDrive({
-  image: PCA_out,
-  description: 'PCA_india',
-  scale:30,
-  crs: projection.crs,
-  maxPixels: 100E10,
-  region: bounds
-
 });
+```
 
-    </code>
-  </pre>
-</div>
-
-Second method I use: 
+Second method I use:(part of codes)</br>
 
 Source: [Andy MacLachlan](https://code.earthengine.google.com/9a3a5d6cac1424a3bfd6dcd35e4e75c5)
 
-<div style="height: 300px; overflow-y: scroll;">
-  <pre>
-    <code>
-    
-
-////// PCA ////////
-
+```{r, eval=FALSE}
 var bounds = india.geometry().bounds();
 
 //var clip2 = ee.Image(meanImage_texture)
@@ -276,91 +207,26 @@ var getPrincipalComponents = function(centered, scale, region) {
   // Perform an eigen analysis and slice apart the values and vectors.
   var eigens = covarArray.eigen();
 
-  // This is a P-length vector of Eigenvalues.
-  var eigenValues = eigens.slice(1, 0, 1);
-  // This is a PxP matrix with eigenvectors in rows.
-  
-  var eigenValuesList = eigenValues.toList().flatten()
-  var total = eigenValuesList.reduce(ee.Reducer.sum())
-  var percentageVariance = eigenValuesList.map(function(item) {
-  return (ee.Number(item).divide(total)).multiply(100).format('%.2f')
-    })
-  
-  print("percentageVariance", percentageVariance)  
-
-  var eigenVectors = eigens.slice(1, 1);
-
-  // Convert the array image to 2D arrays for matrix computations.
-  var arrayImage = arrays.toArray(1);
-
-  // Left multiply the image array by the matrix of eigenvectors.
-  var principalComponents = ee.Image(eigenVectors).matrixMultiply(arrayImage);
-
-  // Turn the square roots of the Eigenvalues into a P-band image.
-  var sdImage = ee.Image(eigenValues.sqrt())
-    .arrayProject([0]).arrayFlatten([getNewBandNames('sd')]);
-
-  // Turn the PCs into a P-band image, normalized by SD.
-  return principalComponents
-    // Throw out an an unneeded dimension, [[]] -> [].
-    .arrayProject([0])
-    // Make the one band array image a multi-band image, [] -> image.
-    .arrayFlatten([getNewBandNames('pc')])
-    // Normalize the PCs by their SDs.
-    .divide(sdImage);
-};
-
-// Get the PCs at the specified scale and in the specified region
-var pcImage = getPrincipalComponents(centered, scale, region);
-
-// Plot each PC as a new layer
-//for (var i = 0; i < bandNames.length().getInfo(); i++) {
-//  var band = pcImage.bandNames().get(i).getInfo();
-//  Map.addLayer(pcImage.select([band]), {min: -2, max: 2}, band);
-//}
-
-Map.addLayer(pcImage, {bands: ['pc2', 'pc1'], min: -2, max: 2}, 'PCA bands 1 and 2');
-
-
-//// EXPORT///////
-var PCA_out = pcImage.select(['pc1', 'pc2'])
-
-//var PCA_out_single_image = PCA_out.toBands();
-
-print(PCA_out, "PCA_output")
-
-//Map.addLayer(PCA_out, {bands: ['pc2', 'pc1'], min: -2, max: 2}, 'PCA bands 1 and 2_out');
-
-var projection = PCA_out.select('pc1').projection().getInfo();
-print(projection, "output_projection")
-
-var bounds = india.geometry();
-
-// Export the image, specifying the CRS, transform, and region.
-Export.image.toDrive({
-  image: PCA_out,
-  description: 'PCA_india',
-  scale:30,
-  crs: projection.crs,
-  maxPixels: 100E10,
-  region: bounds
-
 });
 
-
-   </code>
-   
-  </pre>
-  
-</div>
+```
 
 #### Difference in these two methods
 
-- The first code, the Landsat 8 imagery is preprocessed to create a composite of the median pixel values</br> 
-for **each band**, which is then used to compute the PCA. In the second code, the GLCM texture matrix
-is </br>computed directly from the Landsat 8 imagery, and then mean-centered and standardized before PCA is computed.
-
+The first code, the Landsat 8 imagery is preprocessed to create a composite of the median pixel values</br> for **each band**, which is then used to compute the PCA. In the second code, the GLCM texture matrix is </br>computed directly from the Landsat 8 imagery, and then mean-centered and standardized before PCA is computed.
 
 ## Application
 
+-   Impacts of droughts and floods on croplands and crop production in Southeast Asia -- An application of Google Earth Engine[(Venkatappa et al., 2021)](https://www-sciencedirect-com.libproxy.ucl.ac.uk/science/article/pii/S0048969721039012)</br>
+
+In this study, **PDSI data** were examined using the GEE during the main crop-growing seasons, May to November for the MCR and October to April for the ECR over the 40 years from 1980 to 2019. The **temporal drought conditions** in the MCR and ECR were assessed during the crop-growing seasons between 1980 and 2019. Here, dryness refers to droughts conditions and wetness refers to floods as defined by the values of PDSI. JavaScript programming language was used in the GEE to collect the PDSI monthly **time series data** during the crop-growing seasons in the SEA region. The earth engine filter date function was applied to reduce the PDSI dataset from 1980 to 2019 and generate the PDSI temporal profiles for each MCR and ECR country using international boundaries in the GEE. The generated PDSI profiles by country were computed in the GEE and then, exported outside the GEE for generating seasonal PDSI profiles using Microsoft Excel. Further, the PDSI values were extracted into grid points using the value extraction function by country from 2015 to 2019 in the GEE. When using GEE it is inevitable that we will encounter problems due to network connectivity and network timeouts, but the benefits are online operation, the ability to save to the cloud and the ease of loading data from the library.
+
+<center>![Example of 47,192 grid points imported into Google Earth Engine for determining the PDSI values for categorising the drought and floods levels and events](image/week5gee.jpg)</center>
+
 ## Reflection
+
+This week I have been practising mostly Practical, from simply creating points to implementing Principal Component Analysis. I learnt how to create a GEE project, which is very simple to use, mainly in Javascript, and is extremely convenient because it allows you to search for remote sensing data and geographic data online as well as import local data. When creating points we can point directly from the map and the code is automatically generated, or we can define our own point attributes and coordinates. When practising the code given by the teacher, I encountered two errors, but I managed to solve them after searching for information and consulting with Andy. One of the problems was the definition of a method for principal component analysis, which worked successfully after Andy's answer. I also tried to find other alternatives before solving the problem, tried to define the bands myself and also ran the code successfully. What I have learnt so far is not enough and I will continue to use GEE to complete more remote sensing data analysis in the future.
+
+## Reference
+
+Venkatappa, M., Sasaki, N., Han, P., Abe, I., 2021. Impacts of droughts and floods on croplands and crop production in Southeast Asia -- An application of Google Earth Engine. Sci. Total Environ. 795, 148829. https://doi.org/10.1016/j.scitotenv.2021.148829

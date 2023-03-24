@@ -3,15 +3,19 @@ project:
   output-dir: docs
 
 book:
-  title: "rsbook"
+  title: "Remote Sensing Cities and Environments Book"
   author: "Yuanru Gao"
-  date: "23/03/2023"
+  date: "2023/03/23"
   chapters:
     - index.qmd
     - Chapter1.qmd
+    - Chapter2.qmd
+    - Chapter3.qmd
+    - Chapter4.qmd
+    - Chapter5.qmd
     - Chapter6.qmd
     - Chapter7.qmd
-    - summary.qmd
+    - Chapter8.qmd
     - references.qmd
 
 bibliography: references.bib

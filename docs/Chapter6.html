@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Remote Sensing Cities and Environments Book - 6&nbsp; Chapter 6 - Classification I</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Chapter7.html" rel="next">
+<link href="./Chapter5.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 6 - Classification I</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Remote Sensing Cities and Environments Book</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Chapter 1 - Introduction to Remote Sensing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Xaringan and Quarto</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 3 - Remote sensing data and Corrections</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter4.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 4 - Policy</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter5.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 5 - Google Earth Engine</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter6.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 6 - Classification I</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter7.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chapter 7 - Classification II</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Chapter8.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Chapter 8 - Temperature</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">References</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary"><span class="toc-section-number">6.1</span>  Summary</a>
+  <ul class="collapse">
+  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link" data-scroll-target="#machine-learning"><span class="toc-section-number">6.1.1</span>  Machine Learning</a></li>
+  <li><a href="#unsupervised" id="toc-unsupervised" class="nav-link" data-scroll-target="#unsupervised"><span class="toc-section-number">6.1.2</span>  Unsupervised</a></li>
+  <li><a href="#supervised" id="toc-supervised" class="nav-link" data-scroll-target="#supervised"><span class="toc-section-number">6.1.3</span>  Supervised</a></li>
+  </ul></li>
+  <li><a href="#applications" id="toc-applications" class="nav-link" data-scroll-target="#applications"><span class="toc-section-number">6.2</span>  Applications</a></li>
+  <li><a href="#reflection" id="toc-reflection" class="nav-link" data-scroll-target="#reflection"><span class="toc-section-number">6.3</span>  Reflection</a></li>
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference"><span class="toc-section-number">6.4</span>  Reference</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 6 - Classification I</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="summary" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.1</span> Summary</h2>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/week6mindmap.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Mindmap</figcaption><p></p>
+</figure>
+</div>
+</center>
+<p><br></p>
+<section id="machine-learning" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="machine-learning"><span class="header-section-number">6.1.1</span> Machine Learning</h3>
+<ul>
+<li>What is Machine Learning?<br> Machine learning = science of computer modeling of learning process;Machine learning this is a search through all the data to explain the input data and can be used on new input data.</li>
+</ul>
+<section id="classification-and-regression-trees-cart" class="level4" data-number="6.1.1.1">
+<h4 data-number="6.1.1.1" class="anchored" data-anchor-id="classification-and-regression-trees-cart"><span class="header-section-number">6.1.1.1</span> Classification and regression trees (CART)</h4>
+<p>1.Classification trees classify data into two or more discrete (can only have certain values) categories<br> 2. Regression trees predict continuous dependent variable</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/Decisiontree.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Decision Tree</figcaption><p></p>
+</figure>
+</div>
+</center>
+<p><br> Data source:<a href="https://www.digitalvidya.com/blog/classification-and-regression-trees/">Digital Vidya</a></p>
+<ul>
+<li>Use <strong>Gini impurity</strong>to quantify an impure leaf.<br> Gini impurity= 1-(probability of yes)^2-(the probability of no)^2</li>
+</ul>
+</section>
+<section id="random-forests" class="level4" data-number="6.1.1.2">
+<h4 data-number="6.1.1.2" class="anchored" data-anchor-id="random-forests"><span class="header-section-number">6.1.1.2</span> Random Forests</h4>
+<ul>
+<li>RF characteristic</li>
+</ul>
+<ol type="1">
+<li>We get many, many different trees = a forest Run the data we have down the trees Which option gets more votes based on all the trees: Make decision tree from random number of variables (never all of them)<br></li>
+<li>We get many, many different trees = a forest<br></li>
+<li>Run the data we have down the trees<br></li>
+<li>Which option gets more votes based on all the trees<br></li>
+<li>Bootstrapping (re-sampling by replacement data to make a decision = bagging):For each tree about 70% of the training data is used in the bootstrap, 30% is left out of the bag (OOB)<br></li>
+<li>Proportion of OOB incorrectly classified = OOB error<br></li>
+<li>Often the number of variables per tree is calculated from square root of variables in the original data.<br></li>
+<li>Often the number of variables per tree is calculated from square root of variables in the original data.<br></li>
+<li>Out of Bag Error:All trees that didn’t have the values;Average prediction error - number of correct predicted/total<br></li>
+<li>Validation data: never included within the decision tree<br></li>
+</ol>
+</section>
+</section>
+<section id="unsupervised" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="unsupervised"><span class="header-section-number">6.1.2</span> Unsupervised</h3>
+<section id="maximum-likelyhood" class="level4" data-number="6.1.2.1">
+<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="maximum-likelyhood"><span class="header-section-number">6.1.2.1</span> Maximum Likelyhood</h4>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Basics</th>
+<th style="text-align: left;">Specifics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Decision rule classifier</td>
+<td style="text-align: left;">From histogram to probability density function</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Uses probability</td>
+<td style="text-align: left;">In imagery this is n dimensional multivariate normal density function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Takes the image and assigns pixel to the most probable land cover type.</td>
+<td style="text-align: left;">Each pixel from image data is passed to the maximum likelihood rule &gt; assigns landover to the largest product.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Takes the image and assigns pixel to the most probable land cover type.</td>
+<td style="text-align: left;">Based on probability, the data (landcover) most probably to have the values in our pixel</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Content source:<a href="https://andrewmaclachlan.github.io/CASA0023-lecture-6/#73">Andrew Maclachlan</a></p>
+</section>
+</section>
+<section id="supervised" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="supervised"><span class="header-section-number">6.1.3</span> Supervised</h3>
+<section id="support-vector-machine-svm" class="level4" data-number="6.1.3.1">
+<h4 data-number="6.1.3.1" class="anchored" data-anchor-id="support-vector-machine-svm"><span class="header-section-number">6.1.3.1</span> Support Vector Machine (SVM)</h4>
+<p>Support Vector Machine (SVM) is a relatively simple <strong>Supervised Machine Learning Algorithm</strong> used for classification and/or regression. It is more preferred for classification but is sometimes very useful for regression as well. Basically, SVM finds a hyper-plane that creates a boundary between the types of data. In 2-dimensional space, this hyper-plane is nothing but a line. In SVM, we plot each data item in the dataset in an N-dimensional space, where N is the number of features/attributes in the data. Next, find the optimal hyperplane to separate the data. So by this, you must have understood that inherently, SVM can only perform binary classification (i.e., choose between two classes). However, there are various techniques to use for multi-class problems. Support Vector Machine for Multi-CLass Problems To perform SVM on multi-class problems, we can create a binary classifier for each class of the data. The two results of each classifier will be :</p>
+<p>The data point belongs to that class OR The data point does not belong to that class. For example, in a class of fruits, to perform multi-class classification, we can create a binary classifier for each fruit. For say, the ‘mango’ class, there will be a binary classifier to predict if it IS a mango OR it is NOT a mango. The classifier with the highest score is chosen as the output of the SVM. SVM for complex (Non Linearly Separable) SVM works very well without any modifications for linearly separable data. Linearly Separable Data is any data that can be plotted in a graph and can be separated into classes using a straight line. <img src="image/Linear.png" class="img-fluid" alt="SVM"> <br> Data source:<a href="https://www.geeksforgeeks.org/introduction-to-support-vector-machines-svm/">geeksforgeeks</a></p>
+</section>
+</section>
+</section>
+<section id="applications" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="applications"><span class="header-section-number">6.2</span> Applications</h2>
+<p>Very High Resolution Remote Sensing Imagery Classification Using a Fusion of Random Forest and Deep Learning Technique—Subtropical Area for Example<a href="https://ieeexplore.ieee.org/document/8935521">(Dong et al., 2020)</a><br></p>
+<ul>
+<li>This paper attempts a method based on the neural fusion of Random Forest (RF) classifiers and Convolutional Neural Network (CNN) and uses this fusion for forest mapping in very high resolution remote sensing (VHRRS). In a traditional CNN, the FC layer is used as the final decision base to calculate the likelihood of a pixel belonging to each class. But there are some drawbacks, such as the tendency to over-fit, especially when the sample size is not large enough. So in this paper, a fusion of RF and CNN is proposed in order to optimise the classification. The detailed method is shown in the figure, where the research team first trains the CNN end-to-end using images and labels. In the process, the CNN is trained until a relatively low loss and high accuracy is achieved. The feature maps are then obtained by processing the images using the trained CNNs. This paper has two advantages over other research papers in the same field. Firstly a test was carried out to confirm whether the fusion of CNN and RF could improve VHRRS information extraction. The second is based on RF and the selection of variables with high importance. The test was then conducted again to confirm whether learning from the selected variables would further provide better results. The current shortcoming of this model is that the model is computationally intensive and therefore requires a high level of hardware equipment and cannot be adapted to most computer equipment.<br></li>
+</ul>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="image/wee6essay.gif" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Overview of our approaches</figcaption><p></p>
+</figure>
+</div>
+</center>
+<p>Random forest classifier for remote sensing classification<a href="https://www-tandfonline-com.libproxy.ucl.ac.uk/doi/full/10.1080/01431160412331269698">(Pal, 2005)</a></p>
+<ul>
+<li>This article is an early comparison of SVM and random forest applications in remote sensing classification. Using Landsat Enhanced Thematic Mapper Plus (ETM+) data for a region of the UK with seven different land covers, the performance of a random forest classifier is compared with that of a support vector machine (SVM) in terms of classification accuracy, training time and user-defined parameters. It was concluded that the random forest classifier can achieve classification accuracies comparable to those achieved by support vector machines. Another advantage of the Random Forest classifier is that it only requires two parameters to be set, whereas the SVM requires many user-defined parameters. The random forest classifier can handle categorical data, unbalanced data and data with missing values, which is not easy for SVMs to do. The classifier also provides the relative importance of different features in the classification process, which is useful in feature selection. In addition, the random forest classifier provides a method for detecting outliers by using proximity analysis, which can be used for unsupervised learning.</li>
+</ul>
+</section>
+<section id="reflection" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="reflection"><span class="header-section-number">6.3</span> Reflection</h2>
+<p>It has been a very rewarding week of learning about remote sensing. I understood that the reason why images are classified is because of the need to estimate values of practical significance such as GCSE scores or pollution indices with the help of remote sensing images. Also learnt that the predecessor to machine learning was having a priori knowledge or experts developing rules and then importing the rules into a computer. The decision tree part was very interesting, using the Gini coefficient, always looking for the lowest point, finding it and then splitting it in two to build the tree and repeating this step. It is important to note that the left part of the data is used to build the tree, while the right is used to continue finding the lowest point for classification. The most challenging part is the SVM, which allows misclassification of data to occur, and I have to study this part in depth to get a more accurate and detailed understanding.</p>
+</section>
+<section id="reference" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="reference"><span class="header-section-number">6.4</span> Reference</h2>
+<p>Dong, L., Du, H., Mao, F., Han, N., Li, X., Zhou, G., Zhu, D., Zheng, J., Zhang, M., Xing, L., Liu, T., 2020. Very High Resolution Remote Sensing Imagery Classification Using a Fusion of Random Forest and Deep Learning Technique—Subtropical Area for Example. IEEE J. Sel. Top. Appl. Earth Obs. Remote Sens. 13, 113–128. https://doi.org/10.1109/JSTARS.2019.2953234 <br> Pal, M., 2005. Random forest classifier for remote sensing classification. Int. J. Remote Sens. 26, 217–222. https://doi.org/10.1080/01431160412331269698</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Chapter5.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 5 - Google Earth Engine</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Chapter7.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chapter 7 - Classification II</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

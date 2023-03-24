@@ -1,1 +1,87 @@
+# Chapter 8 - Temperature
 
+## Summary
+
+### Urban Heat Island
+
+1.  What is UHI?
+
+-   urban areas obtain comparatively higher atmospheric and surface temperatures than surrounding rural areas</br>
+
+2.  Factors cause UHI</br>
+
+(1)Main factors</br> - More dark surfaces that retain heat</br> - Less vegetation that cools the environment (evapotranspiration and solar blocking)</br>
+
+(2)Other factors</br> - A low Sky View Factor (SVF)</br> - Air speed, cloud cover, cyclic solar radiation, building material type and anthropogenic energy</br>
+
+<center>![Factors responsible for Urban Heat Island Effect. (Source -- Osmond, 2017)](image/UHI_contributors.png){width="70%"}</center>
+
+### Policy
+
+#### Global
+
+-   New Urban Agenda = standards and principles for planning, construction, development, management and urban improvement(Point 37,54,79)</br>
+-   Sustainable Development Goals (SDG) = targets with measurable indicators for monitoring(Goal 11)</br>
+-   Beat The Heat Handbook(Chapter 5)
+
+#### Local
+
+-   Superblocks
+-   Medellín Green Corridors
+-   Sydney's western suburbs
+
+#### What prooblem these policy have?
+
+-   They don't actually give specifics, like what sort of **planning rules** need to be changed.</br>
+-   If you are a planner how should you consider applications given this guidance / requirements</br>
+-   Is it up to metropolitan level / national level and not individual planning applications</br>
+
+### Data
+
+What datasest tell us? It is related to **temperature**?
+
+<center>![Americans who live with hotter temperatures](image/redline_temp.png){width="70%"}</center>
+
+### Vegetation area selection
+
+-   Fremantle's Urban Forest Plan</br> Fremantle selected the areas based on topography and geology- two aspects that influence tree species from and density. But they did not consider the size of trees.
+
+[Source :City of Fremantle](https://www.fremantle.wa.gov.au/council/key-council-strategies/urban-forest-plan)
+
+<center>![City of Fremantle](image/Thermal_Map_Image.png){width="70%"}</center>
+
+### Reconsideration
+
+Based on local conditions, MacLachlan and his team focus on Mean radiant temperature (MRT).
+
+<center>[Source :MacLachlan et al. 2021](https://www.frontiersin.org/articles/10.3389/fbuil.2020.519599/full)![Planning flow chart](image/plannning_flow_chart.jpg){width="70%"}</center>
+
+### Approaching projects
+
+1.  Search for EO data</br>
+2.  Identify an issue (look at local policy documents)</br>
+3.  Look at global policy documents </br>
+4.  What can be solved with the data?</br>
+5.  What could this data contribute to another question? (e.g. including it as a variable)</br>
+6.  How could the remotely sensed data be included within a data workflow </br>
+7.  Consider Anything else as long as it includes EO data ...
+
+## Application
+
+Fine-scale modeling of the urban heat island: A comparison of multiple linear regression and random forest approaches[(Oukawa et al., 2022)](https://www.sciencedirect.com/science/article/pii/S0048969721079158)</br>
+
+-   This paper develops specific daytime and night-time **multiple linear regression (MLR)** and **random forest (RF) models** to analyse and predict the spatial and temporal evolution of **urban heat island intensity (UHII)**, using **air temperature (Tair)** as a response variant. The study area was chosen to be Londrina, a city in southern Brazil. The study is rich in data, with in situ Tair data and a **comprehensive pool of predictive variables** - including land cover, population, traffic, urban geometry, weather data and atmospheric vertical indexes. The steps of the first model MLR are (1) the highest-ranking variable (most correlated with the response variable) of each sub-category was identified; (2) variables within each sub-category that were correlated (Pearson's \|R\| \> 0.60) with the highest-ranking variable were removed; (3) the remaining variables were verified and removed if they did not match the variance inflation factor (VIF) \< 3. The second random forest model, constructed by averaging predictors learned from regression or classification trees. Each tree is built from multiple bootstrapped datasets and, at each split, a random sample of m predictors are selected as candidates from the full array. Unlike bagging, this method de-correlates individual trees, reducing variance in the dataset, since they are not all dependent on the same data or same variables. It was concluded that the MLR model explained a lower percentage of the variance, which could be attributed to the complex non-linear interactions of the selected predictor variables with Tair. On the other hand, the RF model outperformed the MLR model and was able to explain a larger percentage of the variance during the day and night and under different weather conditions. In addition, the RF model is able to capture and map the fine-scale spatial and temporal variability of UHII across the study area. Such machine learning techniques could provide urban planners with a reliable framework for predicting and mitigating the impacts of the UHI. While this may be challenging in developed cities, the problem of improving the microclimate of new communities can be avoided by avoiding the use of large areas of impervious material.
+
+<center>![Spatiotemporal evolution of the modeled UHII for selected days under different weather conditions (clusters) and selected times of day (a--l)](image/week8uhi.jpg)</center>
+
+Remote sensing based analysis of urban heat islands with vegetation cover in Colombo city, Sri Lanka using Landsat-7 ETM+ data[((Senanayake et al., 2013))](https://www.sciencedirect.com/science/article/pii/S2212095513000345)</br>
+
+-   In this study, the thermal band (10.40-12.50 lm) of **Landsat-7 ETM+** images acquired on 3 different dates covering the city of Colombo, Sri Lanka, was analysed for spatial and temporal identification of the UHI. The vegetation cover of Colombo City was extracted using the **NDVI** method and subsequently examined using the **distribution of LST**. Based on the distribution of LST and the availability of vegetation cover, a deductive index was defined to identify environmentally critical areas in Colombo City. The following conclusions were reached in this paper, firstly based on surface temperature and vegetation cover, Colombo Harbour and the surrounding areas in the north-western part of the city of Colombo were identified as the most environmentally critical areas. Areas with extensive asphalt paving were then identified as the main source of elevated surface temperatures. In addition, the Colombo-Galle A2 road appears to be an environmentally critical area based on vegetation cover and surface temperature availability. The advantage of this project is that the methodology is basic and widely applicable and can be applied to other cities to determine the formation of the UHI.
+
+## Reflection
+
+This week's learning has been very helpful to me as the topic of the group work assignment is also addressing the Urban Heat Island effect. I have learnt this week to think about the kind of questions that need to be considered when developing a project and have practiced exploring how data can explain a research question. I learnt about all the satellite data that can be used to extract surface temperatures and the pros and cons between them. For example, thermal infrared sensor data can measure reflected and emitted radiation from the surface. This radiation contains information about the surface temperature, which can be deduced by calculating the intensity of the radiation. In addition to this I learnt how to extract temperature results. Also, thanks to Andy for the project examples, which broadened my thinking about the heat island effect.
+
+## Reference
+
+Oukawa, G.Y., Krecl, P., Targino, A.C., 2022. Fine-scale modeling of the urban heat island: A comparison of multiple linear regression and random forest approaches. Sci. Total Environ. 815, 152836. https://doi.org/10.1016/j.scitotenv.2021.152836</br> Senanayake, I.P., Welivitiya, W.D.D.P., Nadeeka, P.M., 2013. Remote sensing based analysis of urban heat islands with vegetation cover in Colombo city, Sri Lanka using Landsat-7 ETM+ data. Urban Clim. 5, 19--35. https://doi.org/10.1016/j.uclim.2013.07.004

@@ -1,16 +1,6 @@
-# Chapter 1
-
-<center>![Caption for the picture.](image/R.jpeg){width="50%"}</center>
+# Chapter 1 - Introduction to Remote Sensing
 
 ## Summary
-
-In the first week I learned about some common remote sensing data and applications from the course, as well as gained an initial understanding of remote sensing. I also learnt about basic concepts related to remote sensing such as sensors and electric waves. One of the things I felt most strongly about was the process of how remote sensing works. Active and passive remote sensing
-
-Considered how electromagnetic waves interact with
-
-Earth's surface Atmosphere Explored the 4 resolutions of remotely sensed data
-
-Spectral Spatial Temporal Radiometric Identified how constraints (environmental or sensor) can dictate the choice of data we use.
 
 ### The two types of sensor
 
@@ -26,21 +16,23 @@ Data source:source:[NASA Science](https://www.nasa.gov/directorates/heo/scan/com
 
 Active sensors have their own source of light or illumination. In particular, it actively sends a pulse and measures the backscatter reflected to the sensor.Active remote sensing comes in many forms. For example, they can be satellites orbiting the Earth, helicopters in the air, or anything on the ground too. Just as long as it has an active sensor.For the untrained eye, it's just a bunch of black and white pixels. But the reality is that there's more than meets the eye. For example, the 3 main types of backscatter are:
 
--   Specular reflection:Specular reflection is where dark spots are in the image. In this case, it's the smooth surfaces like the east-west flowing river and paved surfaces.
+-   ::: {.callout-note appearance="minimal"}
+    -   Specular reflection:Specular reflection is where dark spots are in the image. In this case, it's the smooth surfaces like the east-west flowing river and paved surfaces.
 
--   Double-bounce:Specular reflection is where dark spots are in the image. In this case, it's the smooth surfaces like the east-west flowing river and paved surfaces.
+    -   Double-bounce:Specular reflection is where dark spots are in the image. In this case, it's the smooth surfaces like the east-west flowing river and paved surfaces.
 
--   Diffuse scattering:Finally, the majority of the radar image is rough surface and diffuse scattering. This may be from the growing vegetation in the agricultural areas. Passive remote sensing example
+    -   Diffuse scattering:Finally, the majority of the radar image is rough surface and diffuse scattering. This may be from the growing vegetation in the agricultural areas. Passive remote sensing example
+    :::
 
-    <center>![synthetic aperture radar image](image/Radarsat2-Example.png)</center>
+<center>![synthetic aperture radar image](image/Radarsat2-Example.png)</center>
 
-    #### Passive remote sensing content and example
+#### Passive remote sensing content and example
 
-    Passive sensors use naturally emitted light from the sun. Without the sun, there wouldn't be passive remote sensing. Really, passive remote sensing can be very similar to how our eyes interpret the world. For example, here are the Rocky Mountains in true color.But the power of passive remote sensing is to see light in the whole electromagnetic spectrum. For example, this multispectral image can have different band combinations like color infrared.
+Passive sensors use naturally emitted light from the sun. Without the sun, there wouldn't be passive remote sensing. Really, passive remote sensing can be very similar to how our eyes interpret the world. For example, here are the Rocky Mountains in true color.But the power of passive remote sensing is to see light in the whole electromagnetic spectrum. For example, this multispectral image can have different band combinations like color infrared.
 
-    <center>![Rocky Mountains in true color image](image/true-color-678x333.png)</center>
+<center>![Rocky Mountains in true color image](image/true-color-678x333.png)</center>
 
-    [Source:GISGeography](https://gisgeography.com/passive-active-sensors-remote-sensing/)
+[Source:GISGeography](https://gisgeography.com/passive-active-sensors-remote-sensing/)
 
 ### Four Remotely Sensing Resolutions
 
@@ -59,27 +51,30 @@ flowchart LR
 
 <center>![source:NASA Science](image/EMS-Introduction_0.jpeg)</center>
 
-```{dot}
-graph G {
-  layout=neato
-  run -- intr;
-  intr -- runbl;
-  runbl -- run;
-  run -- kernel;
-  kernel -- zombie;
-  kernel -- sleep;
-  kernel -- runmem;
-  sleep -- swap;
-  swap -- runswap;
-  runswap -- new;
-  runswap -- runmem;
-  new -- runmem;
-  sleep -- runmem;
-}
-```
+### Landsat
+
+The Landsat program is the longest-running enterprise for **acquisition of satellite imagery of Earth**. It is a joint NASA / USGS program. On 23 July 1972, the Earth Resources Technology Satellite was launched. This was eventually renamed to Landsat 1 in 1975. The most recent, Landsat 9, was launched on 27 September 2021.
+
+The instruments on the Landsat satellites have acquired millions of images. The images, archived in the United States and at Landsat receiving stations around the world, are a unique resource for global change research and applications in agriculture, cartography, geology, forestry, regional planning, surveillance and education, and can be viewed through the U.S. Geological Survey (USGS) "EarthExplorer" website.
+
+<center>![Comparison of Landsat-7, Landsat-8, and Landsat-9 bands with Sentinel-2, ASTER, and MODIS bands](image/Comparison-of-Landsat-7-Landsat-8-and-Landsat-9-bands-with-Sentinel-2-ASTER-and-MODIS.png)</center>
+
+Source:[researchgate](https://www.researchgate.net/figure/Comparison-of-Landsat-7-Landsat-8-and-Landsat-9-bands-with-Sentinel-2-ASTER-and-MODIS_fig2_348209159)
 
 ## Applications
 
+-   The Spatial and Spectral Resolution of ASTER Infrared Image Data: A Paradigm Shift in Volcanological Remote Sensing[(Ramsey and Flynn, 2020)](https://www.proquest.com/docview/2366098309?parentSessionId=yU1VU6TsLTtmAOPpofRDzm8s8%2BWNDfOlEwl0CfSjQb0%3D&pq-origsite=primo&accountid=14511)</br>
+
+This article points out that the success of the ASTER instrument design and mission has made it possible to capture **high spatial, hyperspectral TIR data** with ever-increasing temporal resolution. Multispectral TIR data can now be acquired on a regular basis, allowing the tracking of subtle thermal anomalies, precursor activity, explosive events, plumes and percentages of obscuration clouds. However, the paper highlights the need for further improvements to the TIR sensor system to improve its **temporal resolution and reduce the percentage of misses between MODIS-based triggers** and the number of ASTER scenes acquired from these triggers. The importance of temporal resolution in remote sensing data can also be seen, affecting the time scale of the data.
+
+-   Assessment of Radiometric Resolution Impact on Remote Sensing Data Classification Accuracy[(Verde et al., 2018)](https://www.mdpi.com/2072-4292/10/8/1267)</br>
+
+The study evaluated the role of **radiometric resolution on classification accuracy**, image information content, and computational complexity. The findings suggest that the impact of radiometric resolution on classification accuracy is low, at least in the experiments conducted in the study. However, in texture classification experiments, the classification accuracies showed differences of up to 7% in some cases. Overall, the research suggests that lower radiometric resolution is not always at the expense of classification accuracy, and it provides some hints on selecting or modifying radiometric resolution for certain classification tasks. However, future research could explore the **interrelations between radiometric and other types of remote sensing resolutions** and the impact of the classification algorithm used in the classification accuracy of various radiometric resolution images.
+
 ## Reflection
 
-Why does the moon have a black sky? Why is the ocean (usually) blue?
+In the first week I learned about some common remote sensing data and applications from the course, as well as gained an initial understanding of remote sensing. I also learnt about basic concepts related to remote sensing such as sensors and electric waves. One of the things I felt most strongly about was the process of how remote sensing works. I also learnt from the course that the reason the moon appears to have a black sky is because it does not have an atmosphere to scatter and disperse sunlight. On Earth, the sky appears blue because the atmosphere scatters the short wavelengths of light from the sun (blue and violet) more than the longer wavelengths (red, orange and yellow), which makes it easier to see blue light. But the moon has no atmosphere, so there is no scattering, and the sky looks black even during the day. The oceans appear blue due to the way the water absorbs and reflects sunlight. When the sun shines on the ocean, the water absorbs all colours of light except blue, and the blue is reflected back to our eyes.I also learned that active remote sensing is the process of using sensors that emit energy (e.g. radar or lidar) to gather information about a target or object, which can be applied, for example, to agriculture, weather forecasting, etc. Passive remote sensing, on the other hand, is the process of detecting and measuring electromagnetic radiation emitted or reflected from objects or surfaces on the Earth without any active source of radiation and can be used for disaster response as well as Earth observation.
+
+## Reference
+
+Ramsey, M., Flynn, I., 2020. The Spatial and Spectral Resolution of ASTER Infrared Image Data: A Paradigm Shift in Volcanological Remote Sensing. Remote Sens. 12, 738. https://doi.org/10.3390/rs12040738</br> Verde, N., Mallinis, G., Tsakiri-Strati, M., Georgiadis, C., Patias, P., 2018. Assessment of Radiometric Resolution Impact on Remote Sensing Data Classification Accuracy. Remote Sens. 10, 1267. https://doi.org/10.3390/rs10081267
