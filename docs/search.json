@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Remote Sensing Cities and Environments Book",
+    "title": "Remote Sensing Cities and Environments Learning Diary Book",
     "section": "",
     "text": "Introduction\nHI, EVERYONE! HOPE YOU ALL HAVE A WONDERFUL DAY!"
   },
@@ -100,7 +100,7 @@
   {
     "objectID": "index.html#about-yuanru-gao",
     "href": "index.html#about-yuanru-gao",
-    "title": "Remote Sensing Cities and Environments Book",
+    "title": "Remote Sensing Cities and Environments Learning Diary Book",
     "section": "About Yuanru Gao",
     "text": "About Yuanru Gao\n My name is Yuanru Gao. I obtained a bachelor’s degree in Geographic Information Science in China in 2022. My areas of interest are WebGIS and indoor navigation. During my undergraduate studies, I was awarded a professional patented software copyright for Jinan Wisdom Spring System for Tourism V1.0. I am now studying Urban Spatial Science at University College London to pursue my dream as a spatial science researcher. As you see above, I am also a dancer and actress. In my spare time, I would like to go to take a dance video as long as I have new inspiration.^_^"
   },
@@ -264,5 +264,12 @@
     "title": "1  Chapter 1 - Introduction to Remote Sensing",
     "section": "1.4 Reference",
     "text": "1.4 Reference\nRamsey, M., Flynn, I., 2020. The Spatial and Spectral Resolution of ASTER Infrared Image Data: A Paradigm Shift in Volcanological Remote Sensing. Remote Sens. 12, 738. https://doi.org/10.3390/rs12040738 Verde, N., Mallinis, G., Tsakiri-Strati, M., Georgiadis, C., Patias, P., 2018. Assessment of Radiometric Resolution Impact on Remote Sensing Data Classification Accuracy. Remote Sens. 10, 1267. https://doi.org/10.3390/rs10081267"
+  },
+  {
+    "objectID": "index.html#preview",
+    "href": "index.html#preview",
+    "title": "Remote Sensing Cities and Environments Learning Diary Book",
+    "section": "Preview",
+    "text": "Preview\nThis is a learning diary book for Remote Sensing Cities and Environments course. Many thanks to my lecturer Andy MacLachlan and his assistant Wenlan Zhang for helping me gain a deeper understanding of remote sensing."
   }
 ]

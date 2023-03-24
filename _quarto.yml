@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Remote Sensing Cities and Environments Book"
+  title: "Remote Sensing Cities and Environments Learning Diary Book"
   author: "Yuanru Gao"
   date: "2023/03/23"
   navbar: 
