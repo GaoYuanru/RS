@@ -6,6 +6,8 @@
 
 #### Geometric correction
 
+::: callout-note
+::: {style="color"}
 -   [Image distortions due to](https://zhuanlan.zhihu.com/p/435401966)
 
 1.  Image distortion due to sensor imaging method
@@ -14,7 +16,11 @@
 4.  Image distortion due to earth curvature
 5.  Image distortion due to atmospheric refraction
 6.  Effects of the Earth's rotation Source:Principles and application of remote sensing by Jiabing Sun
+:::
+:::
 
+::: callout-note
+::: {style="color:blue"}
 -   [Solution](https://andrewmaclachlan.github.io/CASA0023-lecture-3/?panelset3=dn2&panelset4=ratio2&panelset5=pca2#20)
 
 1.  Identify Ground Control Points (GPS) to match known points in the image and a reference dataset</br> (1)local map</br> (2)another image</br> (3)GPS data from handheld device
@@ -32,6 +38,8 @@
     </br> then..</br>
 
     <center>![](image/formulajhjz2.png){width="50%"}</center>
+:::
+:::
 
 -   This means for every value in the output (gold standard) pixel we can get a value in the original input image. The images are distorted as so might not completely overlap
 
@@ -39,9 +47,13 @@
 
 <!-- -->
 
-(1) (observed - predicted (the residual))\^2</br>
-(2) sum them and divide by number of data points</br>
-(3) square root that total</br>
+(1) ::: {.callout-note appearance="simple"}
+    -   (observed - predicted (the residual))\^2</br>
+
+    -   sum them and divide by number of data points</br>
+
+    -   square root that total</br>
+    :::
 
 <!-- -->
 
@@ -77,18 +89,18 @@ What is orthorectified imagery - Using elevation to enable accurate image georef
 
 ## Application
 
-- Atmospheric Correction of Multispectral VNIR Remote Sensing Data: Algorithm and Inter-sensor Comparison of Aerosol and Surface Reflectance Products[(Mishra et al., 2020)](https://www.proquest.com/docview/2446031380?parentSessionId=yZQLUKowlxV%2BqfsslL6JpS3NPBIjzScVSfWOYTDtKJ4%3D&pq-origsite=primo&accountid=14511)</br>
+-   Atmospheric Correction of Multispectral VNIR Remote Sensing Data: Algorithm and Inter-sensor Comparison of Aerosol and Surface Reflectance Products[(Mishra et al., 2020)](https://www.proquest.com/docview/2446031380?parentSessionId=yZQLUKowlxV%2BqfsslL6JpS3NPBIjzScVSfWOYTDtKJ4%3D&pq-origsite=primo&accountid=14511)</br>
 
 This paper presents an algorithm for aerosol optical depth (AOD) retrieval and AC of **VNIR imaging data**. Cartosat-2S MX datasets acquired in different regions of the world were used, covering parts of the Indian subcontinent (India, Nepal, Pakistan and Bangladesh), China and the USA. A total of 106 **Cartosat-2S datasets** obtained in January, July, November and December of 2016 and 2017 were used. Each Cartosat-2S dataset contains radiometric calibration radiation for all four bands. AOD, surface reflectance and NDVI obtained by processing Cartosat-106S MX data at 2 globally distributed locations were compared with the corresponding **MODIS-terra** products juxtaposed in time and space to test the performance of their algorithm.Cartosat-2S and MODIS-terra derived AOD, surface reflectance and NDVI The comparison shows very good correlation. the relative difference between Cartosat-2S AOD and MODIS-terra AOD is within 25%. It is concluded that the algorithm effectively **eliminates atmospheric effects** (aerosol-induced haze) and thus increases the contrast of the surface features.
 
-- Thermal infrared radiometric calibration of the entire Landsat 4, 5, and 7 archive (1982–2010)[(Schott et al., 2012)](https://www-sciencedirect-com.libproxy.ucl.ac.uk/science/article/pii/S0034425712000375)</br>
+-   Thermal infrared radiometric calibration of the entire Landsat 4, 5, and 7 archive (1982--2010)[(Schott et al., 2012)](https://www-sciencedirect-com.libproxy.ucl.ac.uk/science/article/pii/S0034425712000375)</br>
 
 This paper describes the methods and procedures used to perform **radiometric calibration** of the **earliest bulk thermal dataset** in the archive (Landsat 4 data). In order to make proper use of the thermal data, we need to be able to convert the data to surface temperatures. A key step in this process is the complete and consistent calibration of the entire archive to absolute radiation so that it can be compensated in the atmosphere to the radiation left at the surface and then to the surface radiation temperature. The completion of this work and the updated calibration of the earlier (1985-1999) Landsat 5 data (also reported here) concludes a comprehensive calibration of the Landsat thermal data archive from 1982 to the present. Finally, while the results reported in this paper indicate that the Landsat archive is **well calibrated with very small residual uncertainties**, they also indicate the existence of small sources of uncertainty not accounted for by the error model. If these sources can be identified and are systematic rather than random, they may further reduce the errors (below 0.5 K). So it is still possible to continue to improve the error model.
 
-
 ## Reflection
+
 It was a very informative week in the classroom. The first part was calibration and I learnt that the points of the output diagram can be found from the original diagram after calibration, but not necessarily vice versa. There was also the need to resample after geometric corrections. Atmospheric corrections are divided into absolute and relative, and relative corrections require the selection of the base map and the constant elements. Another thing I learnt in class about atmospheric correction is that Atmospheric correction happens before topographic correction. Through this week I have gained a clearer understanding of the four correction methods and I have also gained an understanding of the second part of data joining and image enhancement, data joining can then be linked to the GIS course.
 
 ## Reference
-Mishra, M.K., Rathore, P.S., Misra, A., Kumar, R., 2020. Atmospheric Correction of Multispectral VNIR Remote Sensing Data: Algorithm and Inter‐sensor Comparison of Aerosol and Surface Reflectance Products. Earth Space Sci. 7. https://doi.org/10.1029/2019EA000710</br>
-Schott, J.R., Hook, S.J., Barsi, J.A., Markham, B.L., Miller, J., Padula, F.P., Raqueno, N.G., 2012. Thermal infrared radiometric calibration of the entire Landsat 4, 5, and 7 archive (1982–2010). Remote Sens. Environ. 122, 41–49. https://doi.org/10.1016/j.rse.2011.07.022
+
+Mishra, M.K., Rathore, P.S., Misra, A., Kumar, R., 2020. Atmospheric Correction of Multispectral VNIR Remote Sensing Data: Algorithm and Inter‐sensor Comparison of Aerosol and Surface Reflectance Products. Earth Space Sci. 7. https://doi.org/10.1029/2019EA000710</br> Schott, J.R., Hook, S.J., Barsi, J.A., Markham, B.L., Miller, J., Padula, F.P., Raqueno, N.G., 2012. Thermal infrared radiometric calibration of the entire Landsat 4, 5, and 7 archive (1982--2010). Remote Sens. Environ. 122, 41--49. https://doi.org/10.1016/j.rse.2011.07.022
