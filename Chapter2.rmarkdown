@@ -1,0 +1,21 @@
+# Xaringan and Quarto
+
+## Xaringan presentation
+
+My presentation about Sentinel is available [here](https://gaoyuanru.github.io/Xaringanweek2/#1).
+
+
+```{r, echo = FALSE, out.width='40%'}
+xaringanExtra::embed_xaringan(
+  url = "https://gaoyuanru.github.io/Xaringanweek2/#1",
+  ratio = "16:9") 
+
+```
+
+
+## Source
+
+-   [Xaringan operation instruction](https://andrewmaclachlan.github.io/CASA0023/2_portfolio.html)
+
+-   [Xaringan CSS theme generator](https://cran.r-project.org/web/packages/xaringanthemer/vignettes/xaringanthemer.html)
+

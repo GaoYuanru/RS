@@ -20,7 +20,8 @@
 :::
 
 ::: callout-note
-::: {style="color:blue"}
+<div>
+
 -   [Solution](https://andrewmaclachlan.github.io/CASA0023-lecture-3/?panelset3=dn2&panelset4=ratio2&panelset5=pca2#20)
 
 1.  Identify Ground Control Points (GPS) to match known points in the image and a reference dataset</br> (1)local map</br> (2)another image</br> (3)GPS data from handheld device
@@ -38,13 +39,13 @@
     </br> then..</br>
 
     <center>![](image/formulajhjz2.png){width="50%"}</center>
-:::
+
+</div>
 :::
 
 -   This means for every value in the output (gold standard) pixel we can get a value in the original input image. The images are distorted as so might not completely overlap
 
-6. RMSE
-
+6.  RMSE
 
 (1)(observed - predicted (the residual))\^2</br>
 
@@ -52,8 +53,10 @@
 
 (3) square root that total</br>
 
-
-7. Resample
+```{=html}
+<!-- -->
+```
+7.  Resample
 
     <center>![](image/Geometric-correction-procedures.png){width="70%"}</center>
 

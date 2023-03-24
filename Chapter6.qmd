@@ -24,15 +24,24 @@
 
 -   RF characteristic
 
-1.  We get many, many different trees = a forest Run the data we have down the trees Which option gets more votes based on all the trees: Make decision tree from random number of variables (never all of them)</br>
-2.  We get many, many different trees = a forest</br>
-3.  Run the data we have down the trees</br>
-4.  Which option gets more votes based on all the trees</br>
-5.  Bootstrapping (re-sampling by replacement data to make a decision = bagging):For each tree about 70% of the training data is used in the bootstrap, 30% is left out of the bag (OOB)</br>
-6.  Proportion of OOB incorrectly classified = OOB error</br>
-7.  Often the number of variables per tree is calculated from square root of variables in the original data.</br>
-8.  Often the number of variables per tree is calculated from square root of variables in the original data.</br>
-9.  Out of Bag Error:All trees that didn't have the values;Average prediction error - number of correct predicted/total</br>
+1. We get many, many different trees = a forest Run the data we have down the trees Which option gets more votes based on all the trees: Make decision tree from random number of variables (never all of them)</br>
+
+2. We get many, many different trees = a forest</br>
+
+3. Run the data we have down the trees</br>
+
+4. Which option gets more votes based on all the trees</br>
+
+5. Bootstrapping (re-sampling by replacement data to make a decision = bagging):For each tree about 70% of the training data is used in the bootstrap, 30% is left out of the bag (OOB)</br>
+
+6. Proportion of OOB incorrectly classified = OOB error</br>
+
+7. Often the number of variables per tree is calculated from square root of variables in the original data.</br>
+
+8. Often the number of variables per tree is calculated from square root of variables in the original data.</br>
+
+9. Out of Bag Error:All trees that didn't have the values;Average prediction error - number of correct predicted/total</br>
+
 10. Validation data: never included within the decision tree</br>
 
 ### Unsupervised
@@ -73,7 +82,7 @@ Very High Resolution Remote Sensing Imagery Classification Using a Fusion of Ran
 
 <center>![Overview of our approaches](image/wee6essay.gif){width="70%"}</center>
 
-- Random forest classifier for remote sensing classification[(Pal, 2005)](https://www-tandfonline-com.libproxy.ucl.ac.uk/doi/full/10.1080/01431160412331269698)
+-   Random forest classifier for remote sensing classification[(Pal, 2005)](https://www-tandfonline-com.libproxy.ucl.ac.uk/doi/full/10.1080/01431160412331269698)
 
 This article is an early comparison of SVM and random forest applications in remote sensing classification. Using Landsat Enhanced Thematic Mapper Plus (ETM+) data for a region of the UK with seven different land covers, the performance of a random forest classifier is compared with that of a support vector machine (SVM) in terms of classification accuracy, training time and user-defined parameters. It was concluded that the random forest classifier can achieve classification accuracies comparable to those achieved by support vector machines. Another advantage of the Random Forest classifier is that it only requires two parameters to be set, whereas the SVM requires many user-defined parameters. The random forest classifier can handle categorical data, unbalanced data and data with missing values, which is not easy for SVMs to do. The classifier also provides the relative importance of different features in the classification process, which is useful in feature selection. In addition, the random forest classifier provides a method for detecting outliers by using proximity analysis, which can be used for unsupervised learning.
 

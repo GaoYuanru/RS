@@ -56,5 +56,4 @@ In the fourth week, I read a lot of literature and policy documents where enviro
 
 ## Reference
 
-Li, H., Zhang, G., Zhong, Q., Xing, L., Du, H., 2023. Prediction of Urban Forest Aboveground Carbon Using Machine Learning Based on Landsat 8 and Sentinel-2: A Case Study of Shanghai, China. Remote Sens. 15, 284. https://doi.org/10.3390/rs15010284</br> 
-Sekertekin, A., Bonafoni, S., 2020. Land Surface Temperature Retrieval from Landsat 5, 7, and 8 over Rural Areas: Assessment of Different Retrieval Algorithms and Emissivity Models and Toolbox Implementation. Remote Sens. 12, 294. https://doi.org/10.3390/rs12020294
+Li, H., Zhang, G., Zhong, Q., Xing, L., Du, H., 2023. Prediction of Urban Forest Aboveground Carbon Using Machine Learning Based on Landsat 8 and Sentinel-2: A Case Study of Shanghai, China. Remote Sens. 15, 284. https://doi.org/10.3390/rs15010284</br> Sekertekin, A., Bonafoni, S., 2020. Land Surface Temperature Retrieval from Landsat 5, 7, and 8 over Rural Areas: Assessment of Different Retrieval Algorithms and Emissivity Models and Toolbox Implementation. Remote Sens. 12, 294. https://doi.org/10.3390/rs12020294
