@@ -8,6 +8,9 @@ library(terra)
 library(raster)
 library(sp)
 ```
+## Preview
+
+This is a learning diary book for Remote Sensing Cities and Environments course. Many thanks to my lecturer Andy MacLachlan and his assistant Wenlan Zhang for helping me gain a deeper understanding of remote sensing.
 
 ## About Yuanru Gao
 
