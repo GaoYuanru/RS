@@ -49,7 +49,7 @@ flowchart LR
 
 ```
 
-<center>![source:NASA Science](image/EMS-Introduction_0.jpeg)</center>
+<center>![Wavelength condition - source:NASA Science](image/EMS-Introduction_0.jpeg)</center>
 
 ### Landsat
 
@@ -73,8 +73,7 @@ The study evaluated the role of **radiometric resolution on classification accur
 
 ## Reflection
 
-In the first week I learned about some common remote sensing data and applications from the course, as well as gained an initial understanding of remote sensing. I also learnt about basic concepts related to remote sensing such as sensors and electric waves. One of the things I felt most strongly about was the process of how remote sensing works. I also learnt from the course that the reason the moon appears to have a black sky is because it does not have an atmosphere to scatter and disperse sunlight. On Earth, the sky appears blue because the atmosphere scatters the short wavelengths of light from the sun (blue and violet) more than the longer wavelengths (red, orange and yellow), which makes it easier to see blue light. But the moon has no atmosphere, so there is no scattering, and the sky looks black even during the day. The oceans appear blue due to the way the water absorbs and reflects sunlight. When the sun shines on the ocean, the water absorbs all colours of light except blue, and the blue is reflected back to our eyes.I also learned that active remote sensing is the process of using sensors that emit energy (e.g. radar or lidar) to gather information about a target or object, which can be applied, for example, to agriculture, weather forecasting, etc. Passive remote sensing, on the other hand, is the process of detecting and measuring electromagnetic radiation emitted or reflected from objects or surfaces on the Earth without any active source of radiation and can be used for disaster response as well as Earth observation.
-
+In the first week I learned about some common remote sensing data and applications from the course, as well as gained an initial understanding of remote sensing. I also learnt about basic concepts related to remote sensing such as sensors and electric waves. One of the things I felt most strongly about was the process of how remote sensing works. I also learnt from the course that the reason the moon appears to have a black sky is because it does not have an atmosphere to scatter and disperse sunlight. On Earth, the sky appears blue because the atmosphere scatters the short wavelengths of light from the sun (blue and violet) more than the longer wavelengths (red, orange and yellow), which makes it easier to see blue light. But the moon has no atmosphere, so there is no scattering, and the sky looks black even during the day. The oceans appear blue due to the way the water absorbs and reflects sunlight. When the sun shines on the ocean, the water absorbs all colours of light except blue, and the blue is reflected back to our eyes.I also learned that active remote sensing is the process of using sensors that emit energy (e.g. radar or lidar) to gather information about a target or object, which can be applied, for example, to agriculture, weather forecasting, etc. Passive remote sensing, on the other hand, is the process of detecting and measuring electromagnetic radiation emitted or reflected from objects or surfaces on the Earth without any active source of radiation and can be used for disaster response as well as Earth observation. 
 
 ## Reference
 

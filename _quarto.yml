@@ -16,7 +16,7 @@ book:
     search: true
     right:
       - icon: linkedin
-        href: linkedin.com/in/yuanru-gao-687b31254
+        href: https://linkedin.com/in/yuanru-gao-687b31254
       - icon: github
   chapters:
     - index.qmd
@@ -32,11 +32,17 @@ book:
 
 bibliography: references.bib
 
+#format:
+  #html:
+    #theme: cosmo
+ # pdf:
+    #documentclass: scrreprt
 format:
   html:
-    theme: cosmo
-  pdf:
-    documentclass: scrreprt
+    theme:
+        light: [cosmo, flatly]
+        dark: [cosmo, darkly]
+    code-link: true
 
 editor: visual
 
